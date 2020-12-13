@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>4.2 Iteraciones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta keywords="">
+<style>
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+color: #24292e;
+font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+  sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+
+.dark, .solarizedDark {
+  color: #FFF;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+[type='checkbox'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 600;
+}
+
+hr:before {
+  content: '';
+  display: table;
+}
+
+hr:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ol ol ol,
+ol ul ol,
+ul ol ol,
+ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+dd {
+  margin-left: 0;
+}
+
+code,
+pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  font-size: 12px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+&:before {
+  content: '';
+  display: table;
+}
+
+&:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+> :first-child {
+  margin-top: 0 !important;
+}
+
+> :last-child {
+  margin-bottom: 0 !important;
+}
+
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 0.25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+blockquote,
+dl,
+ol,
+p,
+pre,
+table,
+ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.875em;
+}
+
+h6 {
+  color: #6a737d;
+  font-size: 0.85em;
+}
+
+ol,
+ul {
+  padding-left: 2em;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+li {
+  word-wrap: break-all;
+}
+
+li > p {
+  margin-top: 16px;
+}
+
+li + li {
+  margin-top: 0.25em;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+table th {
+  font-weight: 600;
+}
+
+table td,
+table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+img {
+  border-style: none;
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+img[align='right'] {
+  padding-left: 20px;
+}
+
+img[align='left'] {
+  padding-right: 20px;
+}
+
+code {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: 0.2em 0.4em;
+}
+
+p code,
+li code
+{
+  padding: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+pre {
+  word-wrap: normal;
+}
+
+pre > code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.highlight {
+  margin-bottom: 16px;
+}
+
+.highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.highlight pre,
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+:checked + .radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+
+.task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+hr {
+  box-sizing: content-box;
+  background: transparent;
+  overflow: hidden;
+  background-color: #e1e4e8;
+  border: 0;
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dark p code,
+.dark li code
+{
+  background-color: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.3);
+  color: #03C588;
+}
+.auto p code,
+.auto li code
+{
+  background-color: #F9F9F9;
+  border-color: rgba(0,0,0,0.26);
+  color: #03C588;
+}
+.light p code,
+.light li code
+{
+  background-color: #F9F9F9;
+  border-color: rgba(0,0,0,0.26);
+  color: #03C588;
+}
+.sepia p code,
+.sepia li code
+{
+  background-color: #efe8d6;
+  border-color: rgba(0,0,0,0.26);
+  color: #F77942;
+}
+.solarizedDark p code,
+.solarizedDark li code
+{
+  background-color: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.3);
+  color: #36abe3;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+</head>
+<body>
+<h1>Iteraciones</h1>
+<p>Iterar significa realizar una acción varias veces. Cada vez que se repite se denomina iteración.</p>
+<h2>Sentencia while (mientras)</h2>
+<p>Se basa en repetir un bloque a partir de evaluar una condición lógica, siempre que ésta sea True. Queda en las manos del programador decidir el momento en que la condición cambie a False para hacer que el While finalice.</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">c</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-keyword">while</span><span> </span><span class="cm-variable">c</span><span> </span><span class="cm-operator">&#x3C;=</span><span> </span><span class="cm-number">5</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">c</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span></code></pre>
+<h3>Uso de else en while</h3>
+<p>Se encadena al While para ejecutar un bloque de código una vez la condición ya no devuelve True (normalmente al final):</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">c</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-keyword">while</span><span> </span><span class="cm-variable">c</span><span> </span><span class="cm-operator">&#x3C;=</span><span> </span><span class="cm-number">5</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">c</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span><span class="cm-keyword">else</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Se ha completado toda la iteración y c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span></code></pre>
+<h3>Instrucción break</h3>
+<p>Sirve para "romper" la ejecución del While en cualquier momento. No se ejecutará el Else, ya que éste sólo se llama al finalizar la iteración.:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">c</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-keyword">while</span><span> </span><span class="cm-variable">c</span><span> </span><span class="cm-operator">&#x3C;=</span><span> </span><span class="cm-number">5</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">c</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span><span>    </span><span class="cm-keyword">if</span><span> </span><span>(</span><span class="cm-variable">c</span><span class="cm-operator">==</span><span class="cm-number">4</span><span>)</span><span>:</span><span>
+</span><span>        </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Rompemos el bucle cuando c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span><span>        </span><span class="cm-keyword">break</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"c vale"</span><span>,</span><span class="cm-variable">c</span><span>)</span><span>
+</span><span class="cm-keyword">else</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Se ha completado toda la iteración y c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span></code></pre>
+<h3>Instrucción continue</h3>
+<p>Sirve para "saltarse" la iteración actual sin romper el bucle.</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">c</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-keyword">while</span><span> </span><span class="cm-variable">c</span><span> </span><span class="cm-operator">&#x3C;=</span><span> </span><span class="cm-number">5</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">c</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span><span>    </span><span class="cm-keyword">if</span><span> </span><span class="cm-variable">c</span><span class="cm-operator">==</span><span class="cm-number">3</span><span> </span><span class="cm-keyword">or</span><span> </span><span class="cm-variable">c</span><span class="cm-operator">==</span><span class="cm-number">4</span><span>:</span><span>
+</span><span>        </span><span class="cm-comment"># print("Continuamos con la siguiente iteración", c)</span><span>
+</span><span>        </span><span class="cm-keyword">continue</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"c vale"</span><span>,</span><span class="cm-variable">c</span><span>)</span><span>
+</span><span class="cm-keyword">else</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Se ha completado toda la iteración y c vale"</span><span>,</span><span> </span><span class="cm-variable">c</span><span>)</span><span>
+</span></code></pre>
+<h3>Ejemplo menú interactivo</h3>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Bienvenido al menú interactivo"</span><span>)</span><span>
+</span><span class="cm-keyword">while</span><span>(</span><span class="cm-keyword">True</span><span>)</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"""¿Qué quieres hacer? Escribe una opción</span><span>
+</span><span class="cm-string">    1) Saludar</span><span>
+</span><span class="cm-string">    2) Sumar dos números</span><span>
+</span><span class="cm-string">    3) Salir"""</span><span>)</span><span>
+</span><span>    </span><span class="cm-variable">opcion</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-builtin">input</span><span>(</span><span>)</span><span>
+</span><span>    </span><span class="cm-keyword">if</span><span> </span><span class="cm-variable">opcion</span><span> </span><span class="cm-operator">==</span><span> </span><span class="cm-string">'1'</span><span>:</span><span>
+</span><span>        </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Hola, espero que te lo estés pasando bien"</span><span>)</span><span>
+</span><span>    </span><span class="cm-keyword">elif</span><span> </span><span class="cm-variable">opcion</span><span> </span><span class="cm-operator">==</span><span> </span><span class="cm-string">'2'</span><span>:</span><span>
+</span><span>        </span><span class="cm-variable">n1</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-builtin">float</span><span>(</span><span class="cm-builtin">input</span><span>(</span><span class="cm-string">"Introduce el primer número: "</span><span>)</span><span>)</span><span>
+</span><span>        </span><span class="cm-variable">n2</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-builtin">float</span><span>(</span><span class="cm-builtin">input</span><span>(</span><span class="cm-string">"Introduce el segundo número: "</span><span>)</span><span>)</span><span>
+</span><span>        </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"El resultado de la suma es: "</span><span>,</span><span class="cm-variable">n1</span><span class="cm-operator">+</span><span class="cm-variable">n2</span><span>)</span><span>
+</span><span>    </span><span class="cm-keyword">elif</span><span> </span><span class="cm-variable">opcion</span><span> </span><span class="cm-operator">==</span><span class="cm-string">'3'</span><span>:</span><span>
+</span><span>        </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"¡Hasta luego! Ha sido un placer ayudarte"</span><span>)</span><span>
+</span><span>        </span><span class="cm-keyword">break</span><span>
+</span><span>    </span><span class="cm-keyword">else</span><span>:</span><span>
+</span><span>        </span><span class="cm-builtin">print</span><span>(</span><span class="cm-string">"Comando desconocido, vuelve a intentarlo"</span><span>)</span><span>
+</span></code></pre>
+<h2>Sentencia for (para)</h2>
+<h3>for con listas</h3>
+<p>Para ilustrar la utilidad de esta sentencia vamos a empezar mostrando como recorrer los elementos de una lista utilizando While:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">numeros</span><span> </span><span class="cm-operator">=</span><span> </span><span>[</span><span class="cm-number">1</span><span>,</span><span class="cm-number">2</span><span>,</span><span class="cm-number">3</span><span>,</span><span class="cm-number">4</span><span>,</span><span class="cm-number">5</span><span>,</span><span class="cm-number">6</span><span>,</span><span class="cm-number">7</span><span>,</span><span class="cm-number">8</span><span>,</span><span class="cm-number">9</span><span>,</span><span class="cm-number">10</span><span>]</span><span>
+</span><span class="cm-variable">indice</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-keyword">while</span><span> </span><span class="cm-variable">indice</span><span> </span><span class="cm-operator">&#x3C;</span><span> </span><span class="cm-builtin">len</span><span>(</span><span class="cm-variable">numeros</span><span>)</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-variable">numeros</span><span>[</span><span class="cm-variable">indice</span><span>]</span><span>)</span><span>
+</span><span>    </span><span class="cm-variable">indice</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span></code></pre>
+<p>Lo mismo utilizando el For:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-keyword">for</span><span> </span><span class="cm-variable">numero</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-variable">numeros</span><span>:</span><span>  </span><span class="cm-comment"># Para [variable] en [lista]</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-variable">numero</span><span>)</span><span>
+</span></code></pre>
+<p>¿Mucho más fácil no?</p>
+<p>Para asignar un nuevo valor a los elementos de una lista mientras la recorremos, podríamos intentar asignar al número el nuevo valor:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-keyword">for</span><span> </span><span class="cm-variable">numero</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-variable">numeros</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">numero</span><span> </span><span class="cm-operator">*=</span><span> </span><span class="cm-number">10</span><span>   </span><span>
+</span><span class="cm-variable">numeros</span><span>
+</span></code></pre>
+<p>Sin embargo, esto no funciona. La forma correcta de hacerlo es haciendo referencia al índice de la lista en lugar de la variable:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">indice</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-number">0</span><span>
+</span><span class="cm-variable">numeros</span><span> </span><span class="cm-operator">=</span><span> </span><span>[</span><span class="cm-number">1</span><span>,</span><span> </span><span class="cm-number">2</span><span>,</span><span> </span><span class="cm-number">3</span><span>,</span><span> </span><span class="cm-number">4</span><span>,</span><span> </span><span class="cm-number">5</span><span>,</span><span> </span><span class="cm-number">6</span><span>,</span><span> </span><span class="cm-number">7</span><span>,</span><span> </span><span class="cm-number">8</span><span>,</span><span> </span><span class="cm-number">9</span><span>,</span><span> </span><span class="cm-number">10</span><span>]</span><span>
+</span><span class="cm-keyword">for</span><span> </span><span class="cm-variable">numero</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-variable">numeros</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">numeros</span><span>[</span><span class="cm-variable">indice</span><span>]</span><span> </span><span class="cm-operator">*=</span><span> </span><span class="cm-number">10</span><span>
+</span><span>    </span><span class="cm-variable">indice</span><span class="cm-operator">+=</span><span class="cm-number">1</span><span>
+</span><span class="cm-variable">numeros</span><span>
+</span></code></pre>
+<p>Podemos utilizar la función enumerate() para conseguir el índice y el valor en cada iteración fácilmente:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">numeros</span><span> </span><span class="cm-operator">=</span><span> </span><span>[</span><span class="cm-number">1</span><span>,</span><span> </span><span class="cm-number">2</span><span>,</span><span> </span><span class="cm-number">3</span><span>,</span><span> </span><span class="cm-number">4</span><span>,</span><span> </span><span class="cm-number">5</span><span>,</span><span> </span><span class="cm-number">6</span><span>,</span><span> </span><span class="cm-number">7</span><span>,</span><span> </span><span class="cm-number">8</span><span>,</span><span> </span><span class="cm-number">9</span><span>,</span><span> </span><span class="cm-number">10</span><span>]</span><span>
+</span><span class="cm-keyword">for</span><span> </span><span class="cm-variable">indice</span><span>,</span><span class="cm-variable">numero</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-builtin">enumerate</span><span>(</span><span class="cm-variable">numeros</span><span>)</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">numeros</span><span>[</span><span class="cm-variable">indice</span><span>]</span><span> </span><span class="cm-operator">*=</span><span> </span><span class="cm-number">10</span><span>
+</span><span class="cm-variable">numeros</span><span>
+</span></code></pre>
+<h3>for con cadenas</h3>
+<p>Funciona exactamente igual que con las listas, pero con caracteres en lugar de elementos:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">cadena</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-string">"Hola amigos"</span><span>
+</span><span class="cm-keyword">for</span><span> </span><span class="cm-variable">caracter</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-variable">cadena</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-variable">caracter</span><span>)</span><span>
+</span></code></pre>
+<p>Pero debemos recordar que las cadenas son inmutables:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-keyword">for</span><span> </span><span class="cm-variable">i</span><span>,</span><span> </span><span class="cm-variable">c</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-builtin">enumerate</span><span>(</span><span class="cm-variable">cadena</span><span>)</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">cadena</span><span>[</span><span class="cm-variable">i</span><span>]</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-string">"*"</span><span>
+</span></code></pre>
+<p>Sin embargo siempre podemos generar una nueva cadena:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-variable">cadena</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-string">"Hola amigos"</span><span>
+</span><span class="cm-variable">cadena2</span><span> </span><span class="cm-operator">=</span><span> </span><span class="cm-string">""</span><span>
+</span><span class="cm-keyword">for</span><span> </span><span class="cm-variable">caracter</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-variable">cadena</span><span>:</span><span>
+</span><span>    </span><span class="cm-variable">cadena2</span><span> </span><span class="cm-operator">+=</span><span> </span><span class="cm-variable">caracter</span><span> </span><span class="cm-operator">*</span><span> </span><span class="cm-number">2</span><span> </span><span>
+</span></code></pre>
+<h3>La función range()</h3>
+<p>Sirve para generar una lista de números que podemos recorrer fácilmente, pero no ocupa memoria porque se interpreta sobre la marcha:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-keyword">for</span><span> </span><span class="cm-variable">i</span><span> </span><span class="cm-keyword">in</span><span> </span><span class="cm-builtin">range</span><span>(</span><span class="cm-number">10</span><span>)</span><span>:</span><span>
+</span><span>    </span><span class="cm-builtin">print</span><span>(</span><span class="cm-variable">i</span><span>)</span><span>
+</span></code></pre>
+<p>Esta función devuelve un generador, una estructura manejada en tiempo de ejecución:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-builtin">range</span><span>(</span><span class="cm-number">10</span><span>)</span><span>
+</span></code></pre>
+<p>Si queremos conseguir la lista literal podemos transformar el range a una lista:</p>
+<pre class="cm-s-blackboard CodeMirror language-python"><code class="language-python"><span class="cm-builtin">list</span><span>(</span><span class="cm-builtin">range</span><span>(</span><span class="cm-number">10</span><span>)</span><span>)</span><span>
+</span></code></pre>
+</body>
+</html>
