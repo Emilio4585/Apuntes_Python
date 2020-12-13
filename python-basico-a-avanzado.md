@@ -1,0 +1,130 @@
+---
+title: "python basico a avanzado"
+tags: ""
+---
+
+-   1.- Presentacion del curso
+-   2.- Introducción informal
+    -   Introducción
+    -   Números
+    -   Textos
+    -   Listas
+    -   Lectura por el teclado
+    -   Ejercicios
+-   3.- Operadores y expresiones
+    -   Introducción
+    -   El tipo lógico
+    -   Operadores relacionales
+    -   Operadores lógicos
+    -   Expresiones anidadas
+    -   Operadores de asignación
+    -   Ejercicios
+-   4.- Controlando el flujo
+    -   Introducción
+    -   Condiciones
+    -   Iteraciones
+    -   Ejercicios
+-   5.- Colecciones de datos
+    -   Introducción
+    -   Tuplas
+    -   Conjuntos
+    -   Diccionarios
+    -   Pilas
+    -   Colas
+    -   Ejercicios
+-   6.- Entradas y salidas de datos
+    -   Introducción
+    -   Entrada por teclado
+    -   Entrada por script
+    -   Salida por pantalla
+    -   Ejercicios
+-   7.- Programación de funciones
+    -   Introducción
+    -   Definición y llamada
+    -   Retorno de valores
+    -   Envío de valores
+    -   Argumentos y parámetros
+    -   Paso por valor y referencia
+    -   Argumentos indeterminados
+    -   Funciones recursivas
+    -   Funciones integradas
+    -   Ejercicios
+-   8.- Errores y excepciones
+    -   Introducción
+    -   Errores
+    -   Excepciones
+    -   Excepciones múltiples
+    -   Invocación de excepciones
+    -   Ejercicios
+-   9.- Programación Orientada a Objetos
+    -   Introducción
+    -   Primer contacto
+    -   Clases y objetos
+    -   Atributos y métodos
+    -   Objetos dentro de objetos
+    -   Encapsulación
+    -   Ejercicios
+-   10.- Herencia en la Programación Orientada a Objetos
+    -   Introducción
+    -   Herencia
+    -   Copia de objetos
+    -   Herencia múltiple
+    -   Ejercicios
+-   11.- Métodos de las colecciones
+    -   Introducción
+    -   Métodos de las cadenas
+    -   Métodos de las listas
+    -   Métodos de los conjuntos
+    -   Métodos de los diccionarios
+    -   Ejercicios
+-   12.- Módulos y paquetes
+    -   Introducción
+    -   Módulos
+    -   Paquetes
+    -   Módulos estándar
+    -   Módulo collections
+    -   Módulo datetime
+    -   Módulo math
+    -   Módulo random
+    -   Ejercicios
+-   13.- Manejo de ficheros
+    -   Introducción
+    -   Ficheros de texto
+    -   Módulo pickle
+    -   Ejercicios
+-   14.- Interfaces gráficas con Tkinter
+    -   Introducción
+    -   Tk (Raíz)
+    -   Frame (Marco)
+    -   Label (Etiqueta de texto)
+    -   Entry (Texto corto)
+    -   Text (Texto largo)
+    -   Button (Botón)
+    -   Radiobutton (Radial)
+    -   Checkbutton (Seleccionable)
+    -   Menu (Menú)
+    -   Dialogs (Diálogos)
+    -   Editor de texto
+-   15.- Bases de datos SQLite
+    -   Introducción
+    -   Consultas SQL básicas
+    -   Claves SQL básicas
+    -   Consultas SQL intermedias
+    -   Ejercicios
+-   16.- Funcionalidades avanzadas
+    -   Operadores encadenados
+    -   Comprensión de listas
+    -   Funciones decoradoras
+    -   Funciones generadoras
+    -   Funciones lambda
+    -   Función filter()
+    -   Función map()
+    -   Expresiones regulares
+-   17.- Documentación y pruebas
+    -   Docstrings
+    -   Pydoc
+    -   Doctest
+    -   Unittest
+-   18.- Distribución
+    -   Setuptools
+    -   Pyinstaller
