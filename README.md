@@ -1,7 +1,7 @@
 # Apuntes_Python
 
--   1.- Presentacion del curso{https://github.com/Emilio4585/Apuntes_Python/tree/main/1.-Introduccion}
--   2.- Introducción informal{https://github.com/Emilio4585/Apuntes_Python/blob/main/2.-introduccion_informal/2.introducci%C3%B3n-informal.md}
+-   1.- Presentacion del curso
+-   2.- Introducción informal
     -   Introducción
     -   Números
     -   Textos
